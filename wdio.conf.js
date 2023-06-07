@@ -26,6 +26,7 @@ export const config = {
         browserName: 'chrome',
         acceptInsecureCerts: true,
         'goog:chromeOptions': {
+            excludeSwitches: ['enable-automation'],
             args: [
                 '--window-size=1920,1080',
                 // '--headless',
