@@ -8,7 +8,16 @@ export const config = {
     ],
     suites: {
         exercise: ['./test/specs/exercise.e2e.js'],
-        homework: ['./test/specs/homework/*.e2e.js'],
+        homework: ['./test/specs/homework/homework.e2e.js'],
+        homework_02: ['./test/specs/homework/homework_02.e2e.js'],
+        homework_03: ['./test/specs/homework/homework_03.e2e.js'],
+        homework_04: ['./test/specs/homework/homework_04.e2e.js'],
+        homework_05: ['./test/specs/homework/homework_05.e2e.js'],
+        homework_06: ['./test/specs/homework/homework_06.e2e.js'],
+        homework_07: ['./test/specs/homework/homework_07.e2e.js'],
+        homework_08: ['./test/specs/homework/homework_08.e2e.js'],
+        homework_09: ['./test/specs/homework/homework_09.e2e.js'],
+        homework_12: ['./test/specs/homework/homework_12.e2e.js'],
         lesson_01: ['./test/specs/examples/lesson-01/**/*.e2e.js'],
         lesson_02: ['./test/specs/examples/lesson-02/**/*.e2e.js'],
         lesson_03: ['./test/specs/examples/lesson-03/**/*.e2e.js'],
@@ -23,7 +32,7 @@ export const config = {
     maxInstances: 10,
     capabilities: [{
         maxInstances: 5,
-        browserName: 'chrome',
+        browserName: 'chromium',
         acceptInsecureCerts: true,
         'goog:chromeOptions': {
             excludeSwitches: ['enable-automation'],
@@ -47,7 +56,7 @@ export const config = {
     logLevel: 'silent',
     bail: 0,
     baseUrl: 'https://team8-2022brno.herokuapp.com/',
-    waitforTimeout: 10000,
+    waitforTimeout: 100000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     services: [
@@ -60,4 +69,5 @@ export const config = {
         ui: 'bdd',
         timeout: 60000
     }
+    
 }
