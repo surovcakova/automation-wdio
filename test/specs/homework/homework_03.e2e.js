@@ -8,25 +8,30 @@ describe('Homework', async () => {
 
     await browser.url ("/registrace")
 
-    const nameSelector = $('[name="email"]');
-    console.log(await nameSelector.getHTML());
-    await nameSelector.setValue(userFullName);
+    const nameField = $('[name="email"]');
+    cconsole.log('Name field s displayed: ' + await nameField.isDisplayed());
+    console.log('Name field s enabled: ' + await nameField.isEnabled());
+    await nameField.setValue(userFullName);
 
-    const emailSelector = $('#email');
-    console.log(await emailSelector.getHTML());
-    await emailSelector.setValue(username);
+    const emailField = $('#email');
+    console.log('Email field s displayed: ' + await emailField.isDisplayed());
+    console.log('Email field s enabled: ' + await emailField.isEnabled());
+    await emailField.setValue(username);
 
-    const passwordSelector = $('[type="password"]');
-    console.log(await passwordSelector.getHTML());
-    await passwordSelector.setValue(password);
+    const passwordField = $('[type="password"]');
+    console.log('Password field s displayed: ' + await passwordField.isDisplayed());
+    console.log('Password field s enabled: ' + await passwordField.isEnabled());
+    await passwordField.setValue(password);
 
-    const passwordConfirmSelector = $('#password-confirm');
-    console.log(await passwordConfirmSelector.getHTML());
-    await passwordConfirmSelector.setValue(password);
+    const passwordConfirmField = $('#password-confirm');
+    console.log('Password confirm field s displayed: ' + await passwordConfirmField.isDisplayed());
+    console.log('Password confirm field s enabled: ' + await passwordConfirmField.isEnabled());
+    await passwordConfirmField.setValue(password);
 
-    const registrationSelector = $('.btn-primary');
-    console.log(await registrationSelector.getHTML());
-    await registrationSelector.click();
+    const registrationField = $('.btn-primary');
+    console.log('Registration field s displayed: ' + await registrationField.isDisplayed());
+    console.log('Registration field s enabled: ' + await registrationField.isEnabled());
+    await registrationField.click();
 
 });
 
