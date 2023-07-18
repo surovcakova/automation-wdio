@@ -9,6 +9,11 @@ describe('Checking the registration form', async () => {
 
 it('should check state of field in console', async () => {
 
+    const pageTitle = await $("h1");
+    await expect (await pageTitle.getText()).toEqual('Registrace');
+    console.log('Page title s displayed: ' + await pageTitle.isDisplayed());
+    console.log('Page title s enabled: ' + await pageTitle.isEnabled());
+
     const nameField = $('[name="email"]');
     cconsole.log('Name field s displayed: ' + await nameField.isDisplayed());
     console.log('Name field s enabled: ' + await nameField.isEnabled());
@@ -32,6 +37,7 @@ it('should check state of field in console', async () => {
 });
 
 it('should register with with valid email', async () => {
+    
     const emailField = $('#email');
     const passwordField = $('[type="password"]');
     const passwordConfirmField = $('#password-confirm');
@@ -46,6 +52,11 @@ it('should register with with valid email', async () => {
 });
 
 it('should not register with an existing email', async () => {
+    
+    const emailField = $('#email');
+    const passwordField = $('[type="password"]');
+    const passwordConfirmField = $('#password-confirm');
+    const registrationField = $('.btn-primary');
 
     await nameField.setValue('Nesmysl Nesmysl');
     await emailField.setValue('invalid');
@@ -62,6 +73,12 @@ it('should not register with an existing email', async () => {
 });
 
 it('should not register  with a numeric password only', async () => {
+    
+    const emailField = $('#email');
+    const passwordField = $('[type="password"]');
+    const passwordConfirmField = $('#password-confirm');
+    const registrationField = $('.btn-primary');
+
     await nameField.setValue('Nesmysl Nesmysl');
     await emailField.setValue('nesmysl@nesmysl.cz');
     await passwordField.setValue('123');
