@@ -49,6 +49,9 @@ it('should register with with valid email', async () => {
     await passwordConfirmField.setValue('Nesmysl123');
     await registrationField.click();
 
+    const nameField = await $(".navbar-right").$('[data-toggle="dropdown"]');
+    console.log ((nameField.getText()).toEqual('Nesmysl Nesmysl'));
+
 });
 
 it('should not register with an existing email', async () => {
@@ -86,10 +89,13 @@ it('should not register  with a numeric password only', async () => {
     await registrationField.click();
 
     const invalidPassword = $('div').$('#password').$('.invalid-feeback');
-
-    console.log('Error: ' + await invalidPassword.getText());
+    const toastMessage = $(".toast-message");
     
-    console.log('Email field is dislayed: ' + await PasswordField.isDisplayed());
+    console.log('Error: ' + await invalidPassword.getText());
+    console.log('Password field is dislayed: ' + await PasswordField.isDisplayed());
+    console.log('Error: ' + await toastMessage.getText());
+
+    console.log('Password field is dislayed: ' + await toastMessage.isDisplayed());
 
 
 });
