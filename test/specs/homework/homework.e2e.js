@@ -57,8 +57,8 @@ describe("Registration page homework", async () => {
     await expect(getSubmitButton()).toBeDisplayed();
     await expect(getSubmitButton()).toBeEnabled();
     await expect(getSubmitButton()).toHaveText('Zaregistrovat')
-
-})
+    
+  })
 
 it ('should register with valid email', async () => {
 
