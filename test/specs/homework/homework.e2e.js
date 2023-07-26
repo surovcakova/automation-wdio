@@ -96,7 +96,7 @@ it('should not register with a numeric password only', async () => {
     await expect(getError()).toBeDisplayed();
     await expect(getError()).toHaveText('Heslo musí obsahovat minimálně 6 znaků, velké i malé písmeno a číslici');
     await expect(getToastMessage()).toBeDisplayed();
-    await expect(getToastMessage()).toHaveText('Více polí obsahuje špatně zadanou hodnotu');
+    await expect(getToastMessage()).toHaveText('Některé pole obsahuje špatně zadanou hodnotu');
 
   })
 
