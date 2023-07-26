@@ -27,7 +27,8 @@ export const config = {
         lesson_08: ['./test/specs/examples/lesson-08/**/*.e2e.js'],
         lesson_09: ['./test/specs/examples/lesson-09/**/*.e2e.js'],
         lesson_10: ['./test/specs/examples/lesson-10/**/*.e2e.js'],
-        lesson_11: ['./test/specs/examples/lesson-11/**/*.e2e.js']
+        lesson_11: ['./test/specs/examples/lesson-11/**/*.e2e.js'],
+        lesson_12: ['./test/specs/examples/lesson-12/**/*.e2e.js']
     },
     maxInstances: 10,
     capabilities: [{
@@ -38,7 +39,7 @@ export const config = {
             excludeSwitches: ['enable-automation'],
             args: [
                 '--window-size=1920,1080',
-                // '--headless',
+                '--headless',
                 '--no-sandbox',
                 '--disable-gpu',
                 '--disable-setuid-sandbox',
