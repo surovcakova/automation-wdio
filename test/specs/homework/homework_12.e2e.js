@@ -89,14 +89,14 @@ it('should not register with an existing email', async () => {
 it('should not register with a numeric password only', async () => {
 
     await getNameField().setValue('Nesmysl Nesmysl');
-    await getEmailField().setValue('nesmysl@nesmysl.cz');
+    await getEmailField().setValue('cayennep364@gmail.com');
     await getPasswordField().setValue('1234');
     await getPasswordConfirmField().setValue('1234');
     await getSubmitButton().click();
     await expect(getError()).toBeDisplayed();
     await expect(getError()).toHaveText('Heslo musí obsahovat minimálně 6 znaků, velké i malé písmeno a číslici');
     await expect(getToastMessage()).toBeDisplayed();
-    await expect(getToastMessage()).toHaveText('Více polí obsahuje špatně zadanou hodnotu');
+    await expect(getToastMessage()).toHaveText('Některé pole obsahuje špatně zadanou hodnotu');
 
   })
 
